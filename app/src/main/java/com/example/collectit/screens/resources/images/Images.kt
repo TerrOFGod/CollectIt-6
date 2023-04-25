@@ -5,10 +5,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.collectit.navigation.NavRoute
 import com.example.collectit.ui.components.BasicImageComponent
+import com.example.collectit.ui.theme.CollectItTheme
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,5 +28,14 @@ fun ImagesScreen(navController: NavHostController) {
                 modifier = Modifier.padding(16.dp)
             )
         }
+    }
+}
+
+@ExperimentalMaterial3Api
+@Preview(showBackground = true)
+@Composable
+fun prevImagesScreen(){
+    CollectItTheme {
+        ImagesScreen(navController = rememberNavController())
     }
 }

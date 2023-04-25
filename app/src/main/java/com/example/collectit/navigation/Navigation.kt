@@ -2,13 +2,15 @@ package com.example.collectit.navigation
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.collectit.ImageCard
 import com.example.collectit.R
+import com.example.collectit.navigation.destination.*
 import com.example.collectit.screens.*
 
 sealed class NavRoute(var path: String, var id: Int?, var icon: Int?, var title: String) {
@@ -24,40 +26,18 @@ sealed class NavRoute(var path: String, var id: Int?, var icon: Int?, var title:
 
 @ExperimentalMaterial3Api
 @Composable
-fun NotesNavHost(){
-    val navController = rememberNavController()
-    
+fun CollectItNavHost(
+    navController: NavHostController
+){
     NavHost(navController = navController, startDestination = NavRoute.Home.path){
-        composable(NavRoute.Home.path){
-            HomeScreen(navController = navController)
-        }
-        composable(NavRoute.Images.path){
-            ImagesScreen(navController = navController)
-        }
-        composable(NavRoute.Music.path){
-            MusicScreen(navController = navController)
-        }
-        composable(NavRoute.Video.path){
-            VideoScreen(navController = navController)
-        }
-        composable(NavRoute.Profile.path){
-            ProfileScreen(navController = navController)
-        }
-        composable(NavRoute.Add.path){
-            AddScreen(navController = navController)
-        }
-        composable(NavRoute.Login.path){
-            LoginScreen(navController = navController)
-        }
-        composable(
-            route = "${NavRoute.Image.path}/{${NavRoute.Image.id}}",
-            arguments = listOf(navArgument(NavRoute.Image.id.toString()) { type = NavType.IntType })
-        ) { backStackEntry ->
-            val arguments = requireNotNull(backStackEntry.arguments)
-            val gameCardId = arguments.getInt(NavRoute.Image.id.toString(), 0)
-            if(gameCardId != 0)
-                ImageCard(title = "Bacon ipsum", description = "Bacon ipsum Bacon ipsu mBacon ipsBacon ipsum Bacon ipsum umB acon ipsumB acon ipsum")
-        }
+        home(navController)
+        images(navController)
+        music(navController)
+        video(navController)
+        profile(navController)
+        add(navController)
+        login(navController)
+        image(navController)
     }
 }
 
