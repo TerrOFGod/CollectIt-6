@@ -10,10 +10,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
+import com.example.collectit.screens.ImagesScreen
 import com.example.collectit.ui.components.CustomTagComponent.Companion.CustomTagComponent
+import com.example.collectit.ui.theme.CollectItTheme
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.flowlayout.SizeMode
 
@@ -80,5 +84,17 @@ fun ImageCard(
                 }
             )
         }
+    }
+}
+
+@ExperimentalMaterial3Api
+@Preview(showBackground = true)
+@Composable
+fun prevImageCard(){
+    CollectItTheme {
+        ImageCard(
+            title = "Bacon ipsum",
+            description = "Bacon ipsum Bacon ipsu mBacon ipsBacon ipsum Bacon ipsum umB acon ipsumB acon ipsum"
+        )
     }
 }
