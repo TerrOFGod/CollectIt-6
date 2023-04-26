@@ -8,16 +8,22 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
+import com.example.collectit.navigation.NavRoute
+import com.example.collectit.ui.theme.CollectItTheme
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.flowlayout.SizeMode
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BasicVideoComponent {
     companion object {
         @ExperimentalMaterial3Api
         @Composable
-        fun BasicVideoComponent(
+        fun BasicVideo(
             onClick: () -> Unit,
             modifier: Modifier,
             url: String,
@@ -56,6 +62,22 @@ class BasicVideoComponent {
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
+            }
+        }
+
+        @ExperimentalMaterial3Api
+        @Preview(showBackground = true)
+        @Composable
+        fun prevBasicVideo(){
+            CollectItTheme {
+                val navController = rememberNavController()
+                BasicVideo(
+                    onClick = { navController.navigate("${NavRoute.Image.path}/{${NavRoute.Image.id}}")},
+                    url = "//images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg",
+                    title = "Bacon ipsum",
+                    date = SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(Date()),
+                    modifier = Modifier.padding(16.dp)
+                )
             }
         }
     }

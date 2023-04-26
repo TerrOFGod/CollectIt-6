@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.collectit.navigation.CollectItNavHost
 import com.example.collectit.navigation.NavRoute
-import com.example.collectit.ui.components.NavButtonWithIcon.Companion.NavButtonWithIcon
-import com.example.collectit.ui.components.NavButtonWithoutIcon.Companion.NavButtonWithoutIcon
+import com.example.collectit.ui.components.NavButtonWithIconComponent.Companion.NavButtonWithIcon
+import com.example.collectit.ui.components.NavButtonWithoutIconComponent.Companion.NavButtonWithoutIcon
 import com.example.collectit.ui.theme.CollectItTheme
 import dagger.hilt.android.AndroidEntryPoint
 
