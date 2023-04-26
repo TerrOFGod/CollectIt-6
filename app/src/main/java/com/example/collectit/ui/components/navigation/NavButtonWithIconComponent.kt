@@ -1,4 +1,4 @@
-package com.example.collectit.ui.components
+package com.example.collectit.ui.components.navigation
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.*

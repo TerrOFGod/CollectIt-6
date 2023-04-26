@@ -1,4 +1,4 @@
-package com.example.collectit.ui.components
+package com.example.collectit.ui.components.navigation
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable

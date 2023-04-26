@@ -1,4 +1,4 @@
-package com.example.collectit.ui.components
+package com.example.collectit.ui.components.basics
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio

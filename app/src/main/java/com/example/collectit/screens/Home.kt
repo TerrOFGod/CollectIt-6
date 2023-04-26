@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.collectit.navigation.NavRoute
-import com.example.collectit.ui.components.BasicImageComponent
+import com.example.collectit.ui.components.basics.BasicImageComponent
 import com.example.collectit.ui.theme.CollectItTheme
 import java.text.SimpleDateFormat
 import java.util.*
