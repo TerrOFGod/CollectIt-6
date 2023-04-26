@@ -11,7 +11,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.collectit.navigation.NavRoute
 
-class NavButtonWithIcon {
+class NavButtonWithIconComponent {
     companion object {
         @ExperimentalMaterial3Api
         @Composable

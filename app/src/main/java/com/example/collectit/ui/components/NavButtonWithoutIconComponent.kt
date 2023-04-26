@@ -7,7 +7,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.collectit.navigation.NavRoute
 
-class NavButtonWithoutIcon {
+class NavButtonWithoutIconComponent {
     companion object {
         @ExperimentalMaterial3Api
         @Composable

@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CollectIt"
 include ':app'
+include ':data'
+include ':core'
+include ':domain'

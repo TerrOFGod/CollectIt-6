@@ -1,4 +1,4 @@
-package com.example.collectit.screens
+package com.example.collectit.screens.account
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,7 +31,7 @@ fun LoginScreen(navController: NavHostController) {
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             ClickableText(
-                text = AnnotatedString("Sign up here"),
+                text = AnnotatedString("Зарегестрироваться здесь"),
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .padding(20.dp),
@@ -48,27 +48,38 @@ fun LoginScreen(navController: NavHostController) {
             verticalArrangement = Arrangement.Center
         ) {
 
-            val username = remember { mutableStateOf(TextFieldValue()) }
+            val email = remember { mutableStateOf(TextFieldValue()) }
             val password = remember { mutableStateOf(TextFieldValue()) }
+            val rememberMe = remember { mutableStateOf(false) }
 
             Text(
-                text = "Login",
+                text = "Войти",
                 style = TextStyle(fontSize = 40.sp, fontFamily = androidx.compose.ui.text.font.FontFamily.Cursive)
             )
 
             Spacer(modifier = Modifier.height(20.dp))
             TextField(
-                label = { Text(text = "Username") },
-                value = username.value,
-                onValueChange = { username.value = it })
+                label = { Text(text = "Почта") },
+                value = email.value,
+                onValueChange = { email.value = it })
 
             Spacer(modifier = Modifier.height(20.dp))
             TextField(
-                label = { Text(text = "Password") },
+                label = { Text(text = "Пароль") },
                 value = password.value,
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 onValueChange = { password.value = it })
+
+            Spacer(modifier = Modifier.height(20.dp))
+            Row (verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(
+                    checked = rememberMe.value,
+                    onCheckedChange = { !rememberMe.value },
+                )
+                Text(text = "Запомнить меня")
+            }
+
 
             Spacer(modifier = Modifier.height(20.dp))
             Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
@@ -79,19 +90,9 @@ fun LoginScreen(navController: NavHostController) {
                         .fillMaxWidth()
                         .height(50.dp)
                 ) {
-                    Text(text = "Login")
+                    Text(text = "Войти")
                 }
             }
-
-            Spacer(modifier = Modifier.height(20.dp))
-            ClickableText(
-                text = AnnotatedString("Forgot password?"),
-                onClick = { },
-                style = TextStyle(
-                    fontSize = 14.sp,
-                    fontFamily = androidx.compose.ui.text.font.FontFamily.Default
-                )
-            )
         }
     }
 }

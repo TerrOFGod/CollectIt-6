@@ -1,12 +1,10 @@
-package com.example.collectit.navigation.destination
+package com.example.collectit.navigation.destination.resources.images
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.navigation.*
 import androidx.navigation.compose.composable
-import com.example.collectit.Constants
-import com.example.collectit.ImageCard
+import com.example.collectit.screens.resources.images.ImageCard
 import com.example.collectit.navigation.NavRoute
-import com.example.collectit.screens.LoginScreen
 
 @ExperimentalMaterial3Api
 fun NavGraphBuilder.image(
